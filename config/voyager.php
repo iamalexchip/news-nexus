@@ -15,7 +15,7 @@ return [
         'default_role'                 => 'user',
         'namespace'                    => App\User::class,
         'default_avatar'               => 'users/default.png',
-        'redirect'                     => '/admin',
+        'redirect'                     => '/nexus',
     ],
 
     /*
@@ -43,7 +43,7 @@ return [
     */
 
     'models' => [
-        //'namespace' => 'App\\',
+        //'namespace' => 'App\\Models\\',
     ],
 
     /*

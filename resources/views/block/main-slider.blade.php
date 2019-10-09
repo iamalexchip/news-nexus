@@ -1,6 +1,7 @@
 <!-- block.main-slider -->
 <div id="news-slider" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
+        <!-- Carousel Thumbnails -->
         <ul class="carousel-thumbnails">
             @foreach($sliderArticles as $article)
             <li data-target="#news-slider"
@@ -14,10 +15,22 @@
         @foreach($sliderArticles as $article) 
         <div slide="{{ $loop->index }}" class="carousel-item @if($loop->first) active @endif">
             <img class="d-block w-100" src="{{ $article->image }}" alt="{{ $article->title }}">
-            <div class="carousel-caption">
+            <div class="item-caption">
                 <span>Category</span>
-                <h3>{{ $article->title }}</h3>
-                <p>xv</p>
+                <h3><a href="{{ $article->link }}">{{ $article->title }}</a></h3>
+                <p>
+                    <span>{{ $article->time }}</span>
+                    <span><i class="fa fa-eye"></i>{{ $article->site_clicks }}</span>
+                    <span>
+                        <a href="{{ $article->source->link }}">{{ $article->source->title }}</a>
+                    </span>
+                    <span class="share-icons">
+                        Share
+                        <a href="#" class="fa fa-facebook"></a>
+                        <a href="#" class="fa fa-twitter"></a>
+                        <a href="#" class="fa fa-google"></a>
+                    </span>
+                </p>
             </div>
         </div>
         @endforeach

@@ -1,3 +1,14 @@
+/**
+ * Custom css styles
+ *
+ * 
+ */
+
+/*****
+	
+	GLOBAL CLASSES
+
+*****/
 
 .group-container {
 	max-width: 100%;
@@ -10,10 +21,6 @@
 
 .no-margin {
 	margin: 0;
-}
-
-.anim {
-	transition: 0.2s;
 }
 
 /*****
@@ -108,6 +115,12 @@
 
 *****/
 
+#news-slider {
+	padding: 10px;
+	background: #fff;
+	border-radius: 5px;
+}
+
 #news-slider .carousel-inner {
 	width: 100%;
 	height: 500px;
@@ -130,7 +143,7 @@
     right: 1px;
     z-index: 2;
     padding: 0;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.5);
 }
 
 #news-slider .carousel-thumbnails li {
@@ -140,17 +153,69 @@
 	padding: 20px 30px;
 	color: #fff;
 	cursor: pointer;
+	transition: 0.2s;
 }
 #news-slider .carousel-thumbnails li:hover {
 	background: #55f;
 }
-
 #news-slider .carousel-thumbnails li.active {
 	background: #55f;
 }
 
-#news-slider .carousel-thumbnails p {
+#news-slider .carousel-thumbnails p,
+#news-slider .carousel-thumbnails span {
 	font-weight: bold;
 	color: #fff;
 }
 
+/* caption */
+
+#news-slider .item-caption {
+	width: 70%;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	padding-left: 30px;
+	text-align: left;
+	color: #fff;
+	background: rgba(0, 0, 0, 0.4); /* For browsers that do not support gradients */
+    background: linear-gradient(to top, black, transparent); /* Standard syntax (must be last) */
+}
+
+#news-slider .item-caption span {
+	font-weight: bold;
+}
+
+#news-slider .item-caption h3 {
+	font-size: 30px;
+	font-weight: bold;
+}
+
+#news-slider .item-caption a {
+	color: #fff;
+	text-decoration: none;
+	transition: 0.2s;
+}
+#news-slider .item-caption a:hover {
+	color: #55f;
+	text-shadow: #111 1px 1px 1px;
+}
+
+#news-slider .item-caption p {
+	font-size: 15px;
+	font-weight: bold;
+}
+
+#news-slider .item-caption p > span {
+	margin-right: 15px;
+}
+
+#news-slider .item-caption p > span::after {
+	content: "•";
+	position: relative;
+	left: 10px;
+}
+
+#news-slider .item-caption .share-icons > a {
+	margin-left: 8px;
+}

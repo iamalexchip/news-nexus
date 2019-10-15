@@ -2,8 +2,7 @@
 
 @section('content')
 
-<div style="height: 600px;background: #aaf">
-	Articles
-</div>
+@include('block.articles.potrait', ['articles' => $articles])
+@include('block.articles.landscape', ['articles' => $trendingArticles])
 
 @endsection

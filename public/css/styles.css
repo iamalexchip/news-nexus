@@ -247,9 +247,11 @@
 	color: #55f;
 }
 
+.article .pic img {
+	transition: 0.3s;	
+}
 .article .pic img:hover {
 	opacity: 0.5;
-	transition: 0.3s;
 }
 
 /* potrait */

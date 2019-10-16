@@ -25,6 +25,20 @@ Route::get('media', 'GroupController@media')->name('media');
 Route::get('world', 'GroupController@world')->name('world');
 Route::get('originals', 'GroupController@originals')->name('originals');
 
+// load more
+// TODO: SHOULD ONLY TAKE POST REQUEST
+Route::prefix('more')->group(function () {
+    Route::get('home', 'MoreController@home');
+    Route::get('category/{id}', 'MoreController@category');
+    Route::get('hot/category/{id}', 'MoreController@hotCategory');
+    Route::get('top/category/{id}', 'MoreController@topCategory');
+    Route::get('sidebar/category/{id}', 'MoreController@sidebar');
+    Route::get('related/{post-id}', 'MoreController@related');
+});
+
+// test
+Route::get('test', 'TestController@index');
+
 Auth::routes();
 // Voyager admin
 Route::group(['prefix' => 'nexus'], function () {

@@ -16,7 +16,7 @@ class HomeController extends Controller
     {
     	$data = [
     		'sliderArticles' => Article::hasImage()->take(4)->get(),// latest articles
-            'articles' => Article::take(15)->get(),
+            'articles' => Article::paginate($this->article_pagination),
             'trendingArticles' => Article::take(2)->get()
     	];
         return view('home', $data);

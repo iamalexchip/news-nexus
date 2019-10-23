@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Article;
 
-class MoreController extends Controller
+class LoadController extends Controller
 {
     /**
 	 * Loads more articles for a category

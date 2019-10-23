@@ -22,6 +22,18 @@ class Article extends Model
         'published'
     ];
 
+    protected $dates = ['published'];
+
+    /**
+     * Generates an article link
+     *
+     * @return string
+     */
+    public function getLinkAttribute()
+    {
+        return '/article/'.str_slug($this->title).'_p'.$this->id;
+    }
+
     /**
      * Get the source that owns the item.
      */
@@ -36,29 +48,31 @@ class Article extends Model
      * @param \Illuminate\Database\Eloquent\Builder $query
      * @return \Illuminate\Database\Eloquent\Builder
      */
-    public function scopeHasImage($query)
+    public function scopeWithImage($query)
     {
         return $query->where('image', '<>', null);
     }
 
     /**
-     * Generates an article link
+     * Scope a query to order by publish time, showing latest first
      *
-     * @return string
+     * @param \Illuminate\Database\Eloquent\Builder $query
+     * @return \Illuminate\Database\Eloquent\Builder
      */
-    public function getLinkAttribute()
+    public function scopeLatest($query)
     {
-        return '/article/'.str_slug($this->title).'_p'.$this->id;
+        return $query->orderBy('published', 'desc');
     }
 
     /**
-     * Generates an article link
+     * Scope a query to order by clicks on the site
      *
-     * @return string
+     * @param \Illuminate\Database\Eloquent\Builder $query
+     * @return \Illuminate\Database\Eloquent\Builder
      */
-    public function getTimeAttribute()
+    public function scopePopular($query)
     {
-        return '10 hours';
+        return $query->orderBy('site_clicks', 'desc');
     }
       
 }

@@ -1,0 +1,156 @@
+
+.group-container {
+	max-width: 100%;
+	margin-top: 20px;
+}
+
+.no-padding {
+	padding: 0;
+}
+
+.no-margin {
+	margin: 0;
+}
+
+.anim {
+	transition: 0.2s;
+}
+
+/*****
+
+	SIDENAV
+
+*****/
+
+.sidenav-wrapper {
+	margin: 0;
+	padding: 0 10px;
+}
+
+.sidenav {
+	margin: 0;
+	display: block;
+	padding: 20px 0px;
+	background: #fff;
+	border-radius: 10px;
+}
+
+.sidenav .logo img {
+	width: 180px;
+	padding-left: 10px;
+}
+
+.sidenav .header-text h5 {
+	margin: 20px 0px;
+	padding-left: 20px;
+	color: #222;
+	font-weight: bold;
+}
+
+.sidenav ul {
+	padding-left: 30px;
+	list-style: none;
+}
+
+.sidenav li {
+	margin: 20px 0px;
+}
+
+.sidenav li a {
+	color: #555;
+	font-weight: bold;
+	font-size: 18px;
+	text-decoration: none;
+}
+
+.sidenav li a:hover {
+	color: #086bce;
+}
+
+/*****
+
+	HEADER BAR 
+
+*****/
+
+.headerbar {
+	margin-bottom: 20px;
+	background: #fff;
+}
+
+.headerbar .navbar-brand {
+	color: #555;
+}
+
+.inset {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  box-shadow:
+    inset 0 0 0 2px rgba(255,255,255,0.6), 
+    0 1px 1px rgba(0,0,0,0.1);
+  background-color: transparent !important;
+  z-index: 999;
+}
+
+.inset img {
+  border-radius: inherit;
+  width: inherit;
+  height: inherit;
+  display: block;
+  position: relative;
+  z-index: 998;
+}
+
+/*****
+
+	NEWS SLIDER
+
+*****/
+
+#news-slider .carousel-inner {
+	width: 100%;
+	height: 500px;
+}
+
+#news-slider .carousel-item {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+/* thumbnails */
+
+#news-slider .carousel-thumbnails {
+    display: block;
+	height: 100%;
+	width: 30%;
+    position: absolute;
+    top: 1px;
+    right: 1px;
+    z-index: 2;
+    padding: 0;
+    background: rgba(0, 0, 0, 0.8);
+}
+
+#news-slider .carousel-thumbnails li {
+	display: block;
+	height: 25%;
+	border-bottom: 1px #eee solid;
+	padding: 20px 30px;
+	color: #fff;
+	cursor: pointer;
+}
+#news-slider .carousel-thumbnails li:hover {
+	background: #55f;
+}
+
+#news-slider .carousel-thumbnails li.active {
+	background: #55f;
+}
+
+#news-slider .carousel-thumbnails p {
+	font-weight: bold;
+	color: #fff;
+}
+

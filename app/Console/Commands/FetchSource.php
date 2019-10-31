@@ -16,7 +16,7 @@ class FetchSource extends Command
      *
      * @var string
      */
-    protected $signature = 'feed:fetch-source {id}';
+    protected $signature = 'fetch:source {id}';
 
     /**
      * The console command description.

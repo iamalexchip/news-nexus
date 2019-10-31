@@ -17,7 +17,7 @@ class CreateSourcesTable extends Migration
             $table->increments('id');
             $table->string('title');
             $table->string('url')->unique();
-            $table->boolean('active')->nullable()->default(false);
+            $table->boolean('active')->nullable()->default(true);
             $table->integer('website_id');
             $table->timestamp('last_update')->nullable();
             $table->timestamps();

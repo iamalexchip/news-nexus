@@ -3,7 +3,7 @@
 namespace App\Feed;
 
 use App\Models\Feed;
-use App\Models\Item;
+use App\Models\Article;
 
 use Carbon\Carbon;
 use FeedIo;
@@ -44,10 +44,10 @@ class Fetcher
 
 	public function addItem($contentItem, $feed)
 	{
-		$item = Item::where('guid', $contentItem->getPublicId())->first();
+		$item = Article::where('guid', $contentItem->getPublicId())->first();
 
 		// Check if I exist
-    	if (Item::where('guid', $contentItem->getPublicId())->exists()) {
+    	if (Article::where('guid', $contentItem->getPublicId())->exists()) {
 
     		$this->checkForEditorialChanges($contentItem, $item);
     		return;
@@ -56,7 +56,7 @@ class Fetcher
 
     	if ($this->hasInappropriateContent($contentItem, $feed)) return;
 
-    	$item = Item::create([
+    	$item = Article::create([
     		'source_id' 	=> $feed->id,
     		'guid' 			=> $contentItem->getPublicId(),
     		'title' 		=> $contentItem->getTitle(),

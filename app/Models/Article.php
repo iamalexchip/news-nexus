@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Item extends Model
+class Article extends Model
 {
     /**
      * The attributes that are mass assignable.
@@ -28,5 +28,16 @@ class Item extends Model
     public function source()
     {
         return $this->belongsTo('App\Models\Source');
+    }
+
+    /**
+     * Scope a query to only include articles with images.
+     *
+     * @param \Illuminate\Database\Eloquent\Builder $query
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeHasImage($query)
+    {
+        return $query->where('image', '<>', null);
     }
 }

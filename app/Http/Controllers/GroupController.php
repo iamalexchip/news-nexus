@@ -12,12 +12,11 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function local()
     {
     	$data = [
-    		'sliderArticles' => Article::hasImage()->take(4)->get(),
-            'articles' => Article::all()
+    		'sliderItems' => Article::get(),
     	];
-        return view('home', $data);
+        return view('group.local', $data);
     }
 }

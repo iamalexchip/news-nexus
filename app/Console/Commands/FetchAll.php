@@ -6,8 +6,8 @@ use Illuminate\Console\Command;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputArgument;
 
-use Zerochip\F33d\Feed\Fetch;
-use Zerochip\F33d\Models\Source;
+use App\Feed\Fetch;
+use App\Models\Source;
 
 class FetchAll extends Command
 {
@@ -16,7 +16,7 @@ class FetchAll extends Command
      *
      * @var string
      */
-    protected $signature = 'f33d:fetch-all {--force}';
+    protected $signature = 'fetch:all {--force}';
 
     /**
      * The console command description.
@@ -56,7 +56,11 @@ class FetchAll extends Command
         $items = 0;
 
         foreach ($sources as $source) {
+            $sourceStart = microtime(true);
 			$items += Fetch::source($source->id);// fetch items
+            $sourceEnd = microtime(true);
+            $sourceTimeTaken = round($sourceEnd - $sourceStart, 2);
+            $this->info("Collected {$items} items from source {$source->id} ({$source->url}) in {$sourceTimeTaken} seconds.'");
 		}
 
         $end = microtime(true);

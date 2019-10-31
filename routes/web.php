@@ -25,19 +25,24 @@ Route::get('media', 'GroupController@media')->name('media');
 Route::get('world', 'GroupController@world')->name('world');
 Route::get('originals', 'GroupController@originals')->name('originals');
 
-// load more
+// For loading content on a page via Ajax
 // TODO: SHOULD ONLY TAKE POST REQUEST
-Route::prefix('more')->group(function () {
-    Route::get('home', 'MoreController@home');
-    Route::get('category/{id}', 'MoreController@category');
-    Route::get('hot/category/{id}', 'MoreController@hotCategory');
-    Route::get('top/category/{id}', 'MoreController@topCategory');
-    Route::get('sidebar/category/{id}', 'MoreController@sidebar');
-    Route::get('related/{post-id}', 'MoreController@related');
+Route::prefix('load')->group(function () {
+    Route::get('home', 'LoadController@home');
+    Route::get('article', 'LoadController@article');
+    Route::get('category/{id}', 'LoadController@category');
+    Route::get('hot/category/{id}', 'LoadController@hotCategory');
+    Route::get('top/category/{id}', 'LoadController@topCategory');
+    Route::get('sidebar/category/{id}', 'LoadController@sidebar');
+    Route::get('related/{post-id}', 'LoadController@related');
 });
 
 // test
-Route::get('test', 'TestController@index');
+Route::prefix('test')->group(function () {
+    Route::get('feed', 'TestController@feed');
+	Route::get('feedio', 'TestController@feedio');
+	Route::get('simplexml', 'TestController@simplexml');
+});
 
 Auth::routes();
 // Voyager admin

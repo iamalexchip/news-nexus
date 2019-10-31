@@ -19,7 +19,7 @@
                 <span>Category</span>
                 <h3><a href="{{ $article->link }}">{{ $article->title }}</a></h3>
                 <p>
-                    <span>{{ $article->time }}</span>
+                    <span>{{ $article->published->diffForHumans() }}</span>
                     <span><i class="fa fa-eye"></i>{{ $article->site_clicks }}</span>
                     <span>
                         <a href="{{ $article->source->link }}">{{ $article->source->title }}</a>

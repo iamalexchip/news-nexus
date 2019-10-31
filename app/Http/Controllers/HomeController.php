@@ -15,8 +15,8 @@ class HomeController extends Controller
     public function index()
     {
     	$data = [
-    		'sliderArticles' => Article::hasImage()->take(4)->get(),// latest articles
-            'articles' => Article::paginate($this->article_pagination),
+    		'sliderArticles' => Article::latest()->withImage()->take(4)->get(),
+            'articles' => Article::latest()->paginate($this->article_pagination),
             'trendingArticles' => Article::take(2)->get()
     	];
         return view('home', $data);

@@ -15,7 +15,7 @@
 				  	<h5 class="card-title"><a href="{{ $article->link }}">{{ $article->title }}</a></h5>
 				    <p class="card-text">
 				    	<div class="row">
-							<div class="col-sm-6">{{ $article->time }} ago</div>
+							<div class="col-sm-6">{{ $article->published->diffForHumans() }}</div>
 				            <div class="col-sm-6"><i class="fa fa-eye"></i>{{ $article->site_clicks }}</div>
 				            <div class="col-sm-12">{{ str_limit($article->summary, $limit = 220, $end = '....') }}</div>
 				            <div class="col-sm-12">

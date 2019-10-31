@@ -19,7 +19,7 @@
 	function loadMore()
 	{
 		$.ajax({
-		  url: "/more/home?page="+page
+		  url: "/load/home?page="+page
 		}).done(function(response) {
 			if(response.current_page > response.last_page){
 				$( "#loadMore" ).html('<h3>Thats all folks</h3>');

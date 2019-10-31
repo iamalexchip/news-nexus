@@ -1,5 +1,5 @@
 <!-- partial.sidenav -->
-<div class="sidenav-wrapper col-sm-12">
+<div class="sidenav-wrapper col-sm-2">
 	<div class="sidenav">
 		<div class="header">
 			<div class="logo">

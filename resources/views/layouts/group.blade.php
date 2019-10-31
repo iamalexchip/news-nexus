@@ -19,8 +19,12 @@
                 <div class="col-sm-12">
                     <div class="row articles-and-sidebar">
                         <!-- section.content -->
-                        <div class="col-sm-8 no-margin">@yield('content')</div>
-                        <div class="col-sm-4 no-margin">@include('partial.sidebar')</div>
+                        <div class="col-sm-9 no-margin">
+                            <div class="row">@yield('content')</div>
+                        </div>
+                        <div class="col-sm-3 no-margin">
+                            <div class="row">@include('partial.sidebar')</div>
+                        </div>
                     </div>
                 </div>
             </div>

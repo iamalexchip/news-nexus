@@ -14,7 +14,7 @@
         <!-- Carousel Items -->
         @foreach($sliderArticles as $article) 
         <div slide="{{ $loop->index }}" class="carousel-item @if($loop->first) active @endif">
-            <img class="d-block w-100" src="{{ $article->image }}" alt="{{ $article->title }}">
+            <img class="d-block w-100" src="{# $article->image #}" alt="{{ $article->summary }}">
             <div class="item-caption">
                 <span>Category</span>
                 <h3><a href="{{ $article->link }}">{{ $article->title }}</a></h3>

@@ -42,4 +42,14 @@ class Source extends Model
     {
         return $query->where('active', true);
     }
+
+    /**
+     * Generates an article link
+     *
+     * @return string
+     */
+    public function getLinkAttribute()
+    {
+        return '/source/'.str_slug($this->title).'_s'.$this->id;
+    }
 }

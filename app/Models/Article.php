@@ -40,4 +40,25 @@ class Article extends Model
     {
         return $query->where('image', '<>', null);
     }
+
+    /**
+     * Generates an article link
+     *
+     * @return string
+     */
+    public function getLinkAttribute()
+    {
+        return '/article/'.str_slug($this->title).'_p'.$this->id;
+    }
+
+    /**
+     * Generates an article link
+     *
+     * @return string
+     */
+    public function getTimeAttribute()
+    {
+        return '10 hours';
+    }
+      
 }
